@@ -1,13 +1,14 @@
+import { Label } from './ContactFilter.styled';
+
 export const ContactFilter = ({ filter, title, onChange }) => {
   return (
-    <label>
+    <Label>
       {title}
       <input
         type="text"
         value={filter}
         onChange={evt => onChange(evt.target.value)}
       />
-      ;
-    </label>
+    </Label>
   );
 };

@@ -1,5 +1,6 @@
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
+import { FormStyle, ErrMessage, Lable, Btn } from './ContactForm.styled';
 
 const nameRegex =
   "^[a-zA-Zа-щьюяґєіїА-ЩЬЮЯҐЄІЇ]+(([' \\-][a-zA-Zа-щьюяґєіїА-ЩЬЮЯҐЄІЇ ])?[a-zA-Zа-щьюяґєіїА-ЩЬЮЯҐЄІЇ]*)*$";
@@ -29,19 +30,19 @@ export const ContactForm = ({ onAdd }) => {
         actions.resetForm();
       }}
     >
-      <Form>
-        <label>
+      <FormStyle>
+        <Lable>
           Name
           <Field name="name" type="text" />
-          <ErrorMessage name="name" component="div" />
-        </label>
-        <label>
+          <ErrMessage name="name" component="div" />
+        </Lable>
+        <Lable>
           Number
           <Field name="number" type="tel" placeholder="+380 11111 1111" />
-          <ErrorMessage name="number" component="div" />
-        </label>
-        <button type="submit">Add contact</button>
-      </Form>
+          <ErrMessage name="number" component="div" />
+        </Lable>
+        <Btn type="submit">Add contact</Btn>
+      </FormStyle>
     </Formik>
   );
 };
